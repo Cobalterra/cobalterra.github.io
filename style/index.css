@@ -19,74 +19,68 @@ body {
   user-select: none;
 }
 
-.hide {
+#hide {
   position: relative;
   text-align: right;
   margin-left: auto;
   transition: opacity 150ms ease-in-out;
 }
 
-.hide:focus-within {
+#hide:focus-within {
   opacity: .2;
   pointer-events: none;
 }
 
-.hide:focus-within ~ .info,
-.hide:focus-within ~ .buttons,
-.hide:focus-within ~ .audio {
+#hide:focus-within ~ .info,
+#hide:focus-within ~ .buttons,
+#hide:focus-within ~ .audio {
   opacity: 0;
   pointer-events: none;
 }
 
-.info {
+.panel {
+  border-style: solid;
+  border-width: 10px;
+  border-image: linear-gradient(0deg, rgb(0, 79, 127), rgb(3, 208, 127)) 1;
+  background-color: rgb(31, 28, 29);
+  transition: opacity 150ms ease-in-out;
+}
+
+#info {
   position: relative;
   text-align: center;
   margin-left: auto;
   margin-right: auto;
   pointer-events: none;
-  transition: opacity 150ms ease-in-out;
-  border-style: solid;
-  border-width: 10px;
-  border-image: linear-gradient(0deg, rgb(0, 79, 127), rgb(3, 208, 127)) 1;
-  background-color: rgb(31, 28, 29);
   margin-bottom: 3vh;
   margin-top: 3vh;
   width: 60%;
 }
 
-.infoimage {
+#info img {
   max-width: 100%;
   max-height: 100%;
 }
 
-.buttons {
+#buttons {
   position: relative;
   text-align: center;
   margin-left: auto;
   margin-right: auto;
   max-width: max-content;
-  transition: opacity 150ms ease-in-out;
-  border-style: solid;
-  border-width: 10px;
-  border-image: linear-gradient(0deg, rgb(0, 79, 127), rgb(3, 208, 127)) 1;
-  background-color: rgb(31, 28, 29);
 }
 
-.buttons>a {
+#buttons img {
   margin: 10px;
+  max-width: 40%;
 }
 
-.audio {
+#audio {
   position: relative;
   text-align: center;
   margin-left: auto;
   margin-right: auto;
   bottom: 0px;
-  border-style: solid;
-  border-width: 10px;
-  border-image: linear-gradient(0deg, rgb(0, 79, 127), rgb(3, 208, 127)) 1;
-  background-color: rgb(31, 28, 29);
-  transition: opacity 150ms ease-in-out;
   margin-top: 3vh;
   max-width: max-content;
   padding: 10px;
