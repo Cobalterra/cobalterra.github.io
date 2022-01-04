@@ -5,8 +5,13 @@ document.addEventListener("DOMContentLoaded", () => {
   document.querySelectorAll(".pbg").forEach((element) => {
     document.addEventListener("mousemove", (e) => {
       let moving_value = element.getAttribute("data-value");
-      let x = (e.clientX * moving_value) / 100;
-      let y = (e.clientY * moving_value) / 100;
+
+      let xc = (window.innerWidth / 2) - e.clientX;
+      let yc = (window.innerHeight / 2) - e.clientY;
+
+      let x = (-xc * moving_value) / 100;
+      let y = (-yc * moving_value) / 100;
+
       element.style.transform = "translateX(" + x + "px) translateY(" + y + "px)";
     });
   });
