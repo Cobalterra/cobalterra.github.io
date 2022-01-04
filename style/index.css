@@ -19,6 +19,25 @@ body {
   user-select: none;
 }
 
+.hide {
+  position: relative;
+  text-align: right;
+  margin-left: auto;
+  transition: opacity 150ms ease-in-out;
+}
+
+.hide:focus-within {
+  opacity: .2;
+  pointer-events: none;
+}
+
+.hide:focus-within ~ .info,
+.hide:focus-within ~ .buttons,
+.hide:focus-within ~ .audio {
+  opacity: 0;
+  pointer-events: none;
+}
+
 .info {
   position: relative;
   text-align: center;
@@ -57,15 +76,6 @@ body {
   margin: 10px;
 }
 
-.hide {
-  position: relative;
-  text-align: right;
-  margin-left: auto;
-  top: 0px;
-  right: 0px;
-  transition: opacity 150ms ease-in-out;
-}
-
 .audio {
   position: relative;
   text-align: center;
@@ -80,23 +90,4 @@ body {
   margin-top: 3vh;
   max-width: max-content;
   padding: 10px;
-}
-
-.hide:focus-within {
-  opacity: .2;
-  pointer-events: none;
-}
-
-.hide:focus-within~.info {
-  opacity: 0;
-}
-
-.hide:focus-within~.buttons {
-  opacity: 0;
-  pointer-events: none;
-}
-
-.hide:focus-within~.audio {
-  opacity: 0;
-  pointer-events: none;
 }
