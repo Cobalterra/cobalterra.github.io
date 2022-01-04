@@ -15,7 +15,7 @@ body {
   -o-user-drag: none;
 }
 
-#background, #buttons, #hide, #info {
+body :not(#audio){
   user-select: none;
 }
 
@@ -31,9 +31,7 @@ body {
   pointer-events: none;
 }
 
-#hide:focus-within ~ #info,
-#hide:focus-within ~ #buttons,
-#hide:focus-within ~ #audio {
+#hide:focus-within ~ .panel {
   opacity: 0;
   pointer-events: none;
 }
