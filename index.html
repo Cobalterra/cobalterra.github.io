@@ -1,44 +1,48 @@
 <!doctype html>
 <html>
-<head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-</head>
-    <div class="pmovement">
-        <img src="images/sun-and-moon-fnaf-security-breach.gif" class="pbg" data-value="-2" alt="">
-    </div>
-    <script type="text/javascript">
-document.addEventListener("mousemove", parallax);
-function parallax(e){
-    document.querySelectorAll(".pbg").forEach(function(move){
-        var moving_value = move.getAttribute("data-value");
-        var x = (e.clientX * moving_value)/100;
-        var y = (e.clientY * moving_value)/100;
-        move.style.transform = "translateX(" + x + "px) translateY(" + y + "px)";
-    });
-}
-    </script>
-    <body>
 
-        <div class="hide">
-            <input type="image" src="images/star.gif" />
-        </div>
-            <div class="info">
-                <img src="images/hrh.png" class="infoimage"/>
-            </div>
-            <div class="buttons">
-                    <a href="https://www.youtube.com/channel/UC2xqN_f56NTW0t3Xu7FqhoA"><input type="image" src="images/button1.png" /></a>
-                    <a href="https://www.youtube.com/channel/UCTpUY0ZhTlwGA5WnPrzuHDg"><input type="image" src="images/button2.png" /></a>
-                    <a href="https://twitter.com/Cobalterra"><input type="image" src="images/button3.png" /></a>
-                    <a href="https://twitter.com/CobalterraArt"><input type="image" src="images/button4.png" /></a>
-                    <a href="https://www.twitch.tv/cobalterra"><input type="image" src="images/button5.png" /></a>
-                    <a href="https://soundcloud.com/cobalterra"><input type="image" src="images/button6.png" /></a>
-            </div>
-            <div class="audio">
-                <audio controls autoplay muted>
-                    <source src="playlist/TechDownfall.mp3" type="audio/mpeg">
-                    Oh noes! Your sick nasty browser doesn't support my voluptuous mp3 files!
-                </audio> 
-            </div>     
-    </body>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+</head>
+<div class="pmovement">
+  <img src="images/sun-and-moon-fnaf-security-breach.gif" class="pbg" data-value="-2" alt="">
+</div>
+<script type="text/javascript">
+  document.addEventListener("mousemove", parallax);
+  function parallax(e) {
+    document.querySelectorAll(".pbg").forEach(function (move) {
+      var moving_value = move.getAttribute("data-value");
+      var x = (e.clientX * moving_value) / 100;
+      var y = (e.clientY * moving_value) / 100;
+      move.style.transform = "translateX(" + x + "px) translateY(" + y + "px)";
+    });
+  }
+</script>
+
+<body>
+  <div class="hide">
+    <input type="image" src="images/star.gif" />
+  </div>
+  <div class="info">
+    <img src="images/hrh.png" class="infoimage" />
+  </div>
+  <div class="buttons">
+    <a href="https://www.youtube.com/channel/UC2xqN_f56NTW0t3Xu7FqhoA"><input type="image"
+        src="images/button1.png" /></a>
+    <a href="https://www.youtube.com/channel/UCTpUY0ZhTlwGA5WnPrzuHDg"><input type="image"
+        src="images/button2.png" /></a>
+    <a href="https://twitter.com/Cobalterra"><input type="image" src="images/button3.png" /></a>
+    <a href="https://twitter.com/CobalterraArt"><input type="image" src="images/button4.png" /></a>
+    <a href="https://www.twitch.tv/cobalterra"><input type="image" src="images/button5.png" /></a>
+    <a href="https://soundcloud.com/cobalterra"><input type="image" src="images/button6.png" /></a>
+  </div>
+  <div class="audio">
+    <audio controls autoplay muted>
+      <source src="playlist/TechDownfall.mp3" type="audio/mpeg">
+      Oh noes! Your sick nasty browser doesn't support my voluptuous mp3 files!
+    </audio>
+  </div>
+</body>
+
 </html>
