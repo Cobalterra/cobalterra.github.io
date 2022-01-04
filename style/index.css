@@ -5,23 +5,18 @@ body {
 #background {
   position: fixed;
   pointer-events: none;
-  background-position: center center;
-  background-size: 100vw 100vw;
   min-height: 105%;
   min-width: 105%;
-  top: 0;
   object-fit: contain;
-  background-repeat: no-repeat;
   -webkit-touch-callout: none;
-  -webkit-user-select: none;
-  -khtml-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
   -webkit-user-drag: none;
   -khtml-user-drag: none;
   -moz-user-drag: none;
   -o-user-drag: none;
+}
+
+#background, .buttons, .hide, .info {
+  user-select: none;
 }
 
 .info {
@@ -38,11 +33,6 @@ body {
   margin-bottom: 3vh;
   margin-top: 3vh;
   width: 60%;
-  -webkit-user-select: none;
-  -khtml-user-select: none;
-  -moz-user-select: none;
-  -o-user-select: none;
-  user-select: none;
 }
 
 .infoimage {
@@ -61,11 +51,6 @@ body {
   border-width: 10px;
   border-image: linear-gradient(0deg, rgb(0, 79, 127), rgb(3, 208, 127)) 1;
   background-color: rgb(31, 28, 29);
-  -webkit-user-select: none;
-  -khtml-user-select: none;
-  -moz-user-select: none;
-  -o-user-select: none;
-  user-select: none;
 }
 
 .buttons>a {
@@ -79,11 +64,6 @@ body {
   top: 0px;
   right: 0px;
   transition: opacity 150ms ease-in-out;
-  -webkit-user-select: none;
-  -khtml-user-select: none;
-  -moz-user-select: none;
-  -o-user-select: none;
-  user-select: none;
 }
 
 .audio {
