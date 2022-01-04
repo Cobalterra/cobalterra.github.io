@@ -2,16 +2,7 @@ body {
   margin: 0;
 }
 
-.pmovement {
-  position: relative;
-  background-size: contain;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
-}
-
-.pmovement img {
+#background {
   position: fixed;
   pointer-events: none;
   background-position: center center;
