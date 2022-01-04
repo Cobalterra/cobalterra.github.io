@@ -1,5 +1,5 @@
 // ensure content is loaded before scripts
-document.addEventListener("load", () => {
+document.addEventListener("DOMContentLoaded", () => {
 
   // fancy background movement handler
   document.querySelectorAll(".pbg").forEach((element) => {
