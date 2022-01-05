@@ -1,39 +1,42 @@
 body {
-  margin: 0;
+  margin: 3em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 #background {
   position: fixed;
+  top: 0;
+  z-index: -99999;
   pointer-events: none;
-  min-height: 105%;
-  min-width: 105%;
-  object-fit: contain;
-  -webkit-touch-callout: none;
-  -webkit-user-drag: none;
-  -khtml-user-drag: none;
-  -moz-user-drag: none;
-  -o-user-drag: none;
+  min-height: 100%;
+  min-width: 100%;
 }
 
-body :not(#audio){
+body :not(#audio) {
   user-select: none;
 }
 
 #hide {
-  position: relative;
-  text-align: right;
-  margin-left: auto;
-  transition: opacity 150ms ease-in-out;
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 3em;
 }
 
-#hide:focus-within {
+#hide:focus {
   opacity: .2;
   pointer-events: none;
 }
 
-#hide:focus-within ~ .panel {
+#hide:focus ~ .panel {
   opacity: 0;
   pointer-events: none;
+}
+
+#hide, .panel {
+  transition: opacity 150ms ease-in-out;
 }
 
 .panel {
@@ -41,18 +44,18 @@ body :not(#audio){
   border-width: 10px;
   border-image: linear-gradient(0deg, rgb(0, 79, 127), rgb(3, 208, 127)) 1;
   background-color: rgb(31, 28, 29);
-  transition: opacity 150ms ease-in-out;
+  box-sizing: border-box;
+}
+
+/* spacing between each panel */
+
+.panel:not(:last-child) {
+  margin-bottom: 3em;
 }
 
 #info {
-  position: relative;
-  text-align: center;
-  margin-left: auto;
-  margin-right: auto;
-  pointer-events: none;
-  margin-bottom: 3vh;
-  margin-top: 3vh;
   width: 60%;
+  max-width: 1000px;
 }
 
 #info img {
@@ -61,25 +64,49 @@ body :not(#audio){
 }
 
 #buttons {
-  position: relative;
-  text-align: center;
-  margin-left: auto;
-  margin-right: auto;
-  max-width: max-content;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
 }
 
-#buttons img {
-  margin: 10px;
+#buttons a {
+  margin: 1em;
   max-width: 40%;
 }
 
+#buttons img {
+  max-width: 100%;
+}
+
 #audio {
-  position: relative;
-  text-align: center;
-  margin-left: auto;
-  margin-right: auto;
-  bottom: 0px;
-  margin-top: 3vh;
-  max-width: max-content;
-  padding: 10px;
+  padding: 1em;
+}
+
+#audio audio {
+  width: 100%;
+}
+
+/* rules for phones, tablets, etc */
+
+@media screen and (max-width: 900px) {
+  body {
+    margin: 1.5em;
+  }
+
+  #hide {
+    position: static;
+    margin-top: 0em;
+    margin-left: 1em;
+    margin-right: 1em;
+    margin-bottom: 1em;
+  }
+
+  #info {
+    width: 100%;
+  }
+
+  #audio {
+    width: 100%;
+  }
 }
