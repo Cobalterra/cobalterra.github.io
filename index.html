@@ -1,44 +1,78 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
-<head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-</head>
-    <div class="pmovement">
-        <img src="images/sun-and-moon-fnaf-security-breach.gif" class="pbg" data-value="-2" alt="">
-    </div>
-    <script type="text/javascript">
-document.addEventListener("mousemove", parallax);
-function parallax(e){
-    document.querySelectorAll(".pbg").forEach(function(move){
-        var moving_value = move.getAttribute("data-value");
-        var x = (e.clientX * moving_value)/100;
-        var y = (e.clientY * moving_value)/100;
-        move.style.transform = "translateX(" + x + "px) translateY(" + y + "px)";
-    });
-}
-    </script>
-    <body>
 
-        <div class="hide">
-            <input type="image" src="images/star.gif" />
-        </div>
-            <div class="info">
-                <img src="images/hrh.png" class="infoimage"/>
-            </div>
-            <div class="buttons">
-                    <a href="https://www.youtube.com/channel/UC2xqN_f56NTW0t3Xu7FqhoA"><input type="image" src="images/button1.png" /></a>
-                    <a href="https://www.youtube.com/channel/UCTpUY0ZhTlwGA5WnPrzuHDg"><input type="image" src="images/button2.png" /></a>
-                    <a href="https://twitter.com/Cobalterra"><input type="image" src="images/button3.png" /></a>
-                    <a href="https://twitter.com/CobalterraArt"><input type="image" src="images/button4.png" /></a>
-                    <a href="https://www.twitch.tv/cobalterra"><input type="image" src="images/button5.png" /></a>
-                    <a href="https://soundcloud.com/cobalterra"><input type="image" src="images/button6.png" /></a>
-            </div>
-            <div class="audio">
-                <audio controls autoplay muted>
-                    <source src="playlist/TechDownfall.mp3" type="audio/mpeg">
-                    Oh noes! Your sick nasty browser doesn't support my voluptuous mp3 files!
-                </audio> 
-            </div>     
-    </body>
+<head>
+  <!-- document metadata -->
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary" />
+  <meta property="og:locale" content="en_US" />
+  <meta name="keywords" content="tags, go, here" />
+
+  <!-- scripts and stylesheets -->
+  <link rel="stylesheet" href="./style/index.css">
+  <script src="./scripts/index.js"></script>
+
+  <!-- tab title and icon -->
+  <title lang="en">dicke and bals dot com</title>
+  <link rel="icon" type="image/png" href="./images/favicon.png"/>
+
+  <!-- embed data -->
+  <meta property="og:title" content="" />
+  <meta name="twitter:title" content="" />
+
+  <link rel="canonical" href="" />
+  <meta property="og:url" content="" />
+  <meta name="twitter:url" content="" />
+
+  <meta name="description" content="" />
+  <meta property="og:description" content="" />
+  <meta name="twitter:description" content="" />
+
+  <meta property="og:image" content="./images/favicon.png" />
+  <meta name="twitter:image" content="./images/favicon.png" />
+
+  <meta name="theme-color" content="#FFFFFF" />
+  <meta name="msapplication-TileColor" content="#FFFFFF">
+</head>
+
+<body>
+  <img id="background" src="images/sun-and-moon-fnaf-security-breach.gif" class="pbg" data-value="-2" alt="">
+
+  <input id="hide" type="image" src="images/star.gif" />
+
+  <div id="info" class="panel">
+    <img src="images/hrh.png" />
+  </div>
+
+  <div id="buttons" class="panel">
+    <a href="https://www.youtube.com/channel/UC2xqN_f56NTW0t3Xu7FqhoA">
+      <img src="images/button1.png" />
+    </a>
+    <a href="https://www.youtube.com/channel/UCTpUY0ZhTlwGA5WnPrzuHDg">
+      <img src="images/button2.png" />
+    </a>
+    <a href="https://twitter.com/Cobalterra">
+      <img src="images/button3.png" />
+    </a>
+    <a href="https://twitter.com/CobalterraArt">
+      <img src="images/button4.png" />
+    </a>
+    <a href="https://www.twitch.tv/cobalterra">
+      <img src="images/button5.png" />
+    </a>
+    <a href="https://soundcloud.com/cobalterra">
+      <img src="images/button6.png" />
+    </a>
+  </div>
+
+  <div id="audio" class="panel">
+    <audio src="playlist/TechDownfall.mp3" controls autoplay muted>
+      Oh noes! Your sick nasty browser doesn't support my voluptuous mp3 files!
+    </audio>
+  </div>
+</body>
+
 </html>
