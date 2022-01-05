@@ -96,7 +96,7 @@ body :not(#audio) {
   border-radius: 1.5em;
   box-sizing: border-box;
   background-clip: padding-box;
-  background-color: rgba(31, 28, 29, 0.5);
+  background-color: rgba(31, 28, 29, 0.75);
 }
 
 .panel::before {
@@ -114,6 +114,7 @@ body :not(#audio) {
   -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
   -webkit-mask-composite: destination-out;
   mask-composite: exclude;
+  pointer-events: none;
 }
 
 /* spacing between each panel */
