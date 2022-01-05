@@ -34,15 +34,31 @@ body {
   }
 }
 
+.pbg[data-value="-1"] {
+  animation-duration: 5s;
+}
+
+.pbg[data-value="-2"] {
+  animation-duration: 4s;
+}
+
+.pbg[data-value="-3"] {
+  animation-duration: 3s;
+}
+
+.pbg[data-value="-4"] {
+  animation-duration: 2s;
+}
+
 .pbg {
   width: 300%;
   height: 100vh;
   /* first value MUST be exact width of background!!! */
   background-size: 214px 100%; 
-  animation-duration: 2s;
   animation-iteration-count: infinite;
   animation-timing-function: linear;
   animation-name: scroll;
+  transform: scale(1.1); /* will be overridden by script!!! */
   transition-duration: 1s;
   transition-property: transform;
   transition-timing-function: cubic-bezier(0, 0.55, 0.45, 1);
@@ -90,12 +106,32 @@ body :not(#audio) {
 }
 
 .panel {
+  position: relative;
   border-style: solid;
-  border-width: 10px;
-  border-image: linear-gradient(0deg, rgb(0, 79, 127), rgb(3, 208, 127)) 1;
-  background-color: rgb(31, 28, 29);
-  background-clip: padding-box;
+  border-width: 1em;
+  border-color: transparent;
+  border-radius: 1.5em;
   box-sizing: border-box;
+  background-clip: padding-box;
+  background-color: rgba(31, 28, 29, 0.75);
+}
+
+.panel::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: inherit;
+  padding: 1em;
+  margin: -1em;
+  background-image: linear-gradient(0deg, rgb(0, 79, 127), rgb(3, 208, 127));
+  background-origin: border-box;
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: destination-out;
+  mask-composite: exclude;
+  pointer-events: none;
 }
 
 /* spacing between each panel */
@@ -152,6 +188,11 @@ body :not(#audio) {
     margin-left: 1em;
     margin-right: 1em;
     margin-bottom: 1em;
+  }
+
+  #buttons a {
+    margin: 1em;
+    max-width: 9em;
   }
 
   #info {
