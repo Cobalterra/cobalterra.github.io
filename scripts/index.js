@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", () => {
       let x = (-xc * moving_value) / 100;
       let y = (-yc * moving_value) / 100;
 
-      element.style.transform = "translateX(" + x + "px) translateY(" + y + "px)";
+      element.style.transform = "scale(1.1) translateX(" + x + "px) translateY(" + y + "px)";
     });
   });
 });
