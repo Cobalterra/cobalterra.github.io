@@ -43,6 +43,9 @@ body {
   animation-iteration-count: infinite;
   animation-timing-function: linear;
   animation-name: scroll;
+  transition-duration: 1s;
+  transition-property: transform;
+  transition-timing-function: cubic-bezier(0, 0.55, 0.45, 1);
 }
 
 body :not(#audio) {
