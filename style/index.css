@@ -75,6 +75,7 @@ body :not(#audio) {
   border-width: 10px;
   border-image: linear-gradient(0deg, rgb(0, 79, 127), rgb(3, 208, 127)) 1;
   background-color: rgb(31, 28, 29);
+  background-clip: padding-box;
   box-sizing: border-box;
 }
 
