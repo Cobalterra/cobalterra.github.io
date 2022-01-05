@@ -34,6 +34,22 @@ body {
   }
 }
 
+.pbg[data-value="-1"] {
+  animation-duration: 5s;
+}
+
+.pbg[data-value="-2"] {
+  animation-duration: 4s;
+}
+
+.pbg[data-value="-3"] {
+  animation-duration: 3s;
+}
+
+.pbg[data-value="-4"] {
+  animation-duration: 2s;
+}
+
 .pbg {
   width: 300%;
   height: 100vh;
