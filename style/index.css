@@ -160,10 +160,16 @@ body :not(#audio) {
 #buttons a {
   margin: 1em;
   max-width: 14em;
+  border-radius: 50em;
 }
 
 #buttons img {
   max-width: 100%;
+  border-radius: 50em;
+}
+
+#buttons img:hover {
+  opacity: 0.65;
 }
 
 #audio {
