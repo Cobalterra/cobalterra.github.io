@@ -9,8 +9,7 @@ body {
   top: 0;
   z-index: -99999;
   pointer-events: none;
-  background-image: #000000;
-  /*background-image: radial-gradient(#004E7E, #00234E)*/
+  background-image: radial-gradient(#004E7E, #00234E)
 }
 
 #background::after {
