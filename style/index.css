@@ -16,7 +16,8 @@ body {
 #background::after {
   content: "";
   display: block;
-  background-color: rgba(53, 58, 78, 0.38)
+  background-color: black;
+  /*background-color: rgba(53, 58, 78, 0.38)*/
 }
 
 #background, #background::after, .pbg {
