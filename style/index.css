@@ -209,8 +209,8 @@ body :not(#audio) {
 .volumeSlider::-moz-range-thumb {
   -webkit-appearance: none; 
   appearance: none;
-  width: 25px; 
-  height: 25px; 
+  width: 10px; 
+  height: 10px; 
   background:white;
   border-radius: 40%;
   box-shadow: -407px 0 0 400px white;
