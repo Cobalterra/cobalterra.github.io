@@ -15,6 +15,7 @@ body {
 #background::after {
   content: "";
   display: block;
+  z-index: -99999;
   background-color: rgba(53, 58, 78, 0.38)
 }
 
@@ -91,14 +92,40 @@ body :not(#audio) {
   margin: 3em;
 }
 
+.hiddenGem{
+  position: absolute;
+  max-width: 200px;
+  max-height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  min-height: 100vh;
+  pointer-events: none;
+  opacity: 0;
+}
+
+.hiddenGem img{
+  height: 100%;
+  width: 100%;
+}
+
 #hide:focus {
   opacity: .2;
   pointer-events: none;
 }
 
+#hide:focus ~ .hiddenGem {
+  opacity: 1;
+}
+
 #hide:focus ~ .panel {
   opacity: 0;
   pointer-events: none;
+}
+
+#hide, .hiddenGem {
+  transition: opacity 150ms ease-in-out;
 }
 
 #hide, .panel {
@@ -148,6 +175,59 @@ body :not(#audio) {
 #info img {
   max-width: 100%;
   max-height: 100%;
+}
+
+.boomboxButton{
+  display: block;
+  margin: auto;
+  padding-bottom: 5px;
+}
+
+.volumeSlider{
+  appearance: none;
+  height: 10px;
+  width: 125px;
+  background:black;
+  outline: none;
+  overflow:hidden;
+  opacity:0.5;
+  border-radius: 1.5em;
+  display:block;
+}
+
+.volumeSlider::-webkit-slider-thumb {
+  -webkit-appearance: none; 
+  appearance: none;
+  height: 10px;
+  width: 10px;
+  background:white;
+  border-radius: 40%;
+  box-shadow: -407px 0 0 400px white;
+  cursor: pointer; 
+}
+
+.volumeSlider::-moz-range-thumb {
+  width: 25px; 
+  height: 25px; 
+  background: black; 
+  cursor: pointer; 
+}
+
+#volume{
+ display: block;
+ margin: auto;
+}
+
+.boomboxButton {
+  border: none;
+  background: none;
+  max-width: 100px;
+  max-height: 100px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 15px;
 }
 
 #buttons {
