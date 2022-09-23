@@ -23,3 +23,32 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 });
+function fancyBoombox(){
+  var element1 = document.getElementById("audioBox");
+  element1.classList.toggle("ON")
+  if(document.getElementById("audioBox").classList.contains("ON")){
+    document.getElementById("image").src="images/boombox ON.gif";
+      }
+  else{
+    document.getElementById("image").src="images/boombox.png";
+      }
+}
+function tunes(){
+  var tunies = document.getElementsByName("tune");
+  for(i=0; i<tunies.length; i++){
+    if(tunies[i].duration > 0 && !tunies[i].paused)
+    {
+      tunies[i].pause();
+      return
+    }
+  }
+  var j = Math.round(Math.random()*(tunies.length-1))
+  tunies[j].play();
+}
+document.addEventListener("input", (e) => {
+  var tunies = document.getElementsByName("tune");
+  for(k=0; k<tunies.length; k++){
+    var bruh = e.target.value;
+  tunies[k].volume = parseFloat(bruh/100);
+}});
+
