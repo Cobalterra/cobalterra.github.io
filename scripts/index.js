@@ -2,7 +2,7 @@
 document.addEventListener("DOMContentLoaded", () => {
 
   // fancy background movement handler
-  document.querySelectorAll(".pbg").forEach((element) => {
+  document.querySelectorAll(".pbg, .burg").forEach((element) => {
     // update position when cursor moves
     document.addEventListener("mousemove", (e) => {
       let moving_value = element.getAttribute("data-value");

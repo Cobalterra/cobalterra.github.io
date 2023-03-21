@@ -1,22 +1,65 @@
+html{
+  height: 100vh;
+  width: 100%;
+  cursor: url("/images/theheadsetburg.png"), auto;
+}
+
 body {
-  margin: 3em;
   display: flex;
   flex-direction: column;
   align-items: center;
+  text-align: center;
+  min-height: 100vh;
+  margin: auto;
+  background: #000000;
+
+}
+
+.gridley {
+  position:absolute;
+  width: 100%;
+  min-height: 100%;
+  background-image: linear-gradient(#38CB7D .1em, transparent .1em), linear-gradient(90deg, #38CB7D .1em, transparent .1em);
+  background-size: 7em 7em;
+  opacity: .25;
+  z-index: -1;
+  -moz-animation: movebg 60s infinite ;
+  -webkit-animation: movebg 60s  infinite;
+  -o-animation: movebg 60s  infinite;
+  -ms-animation: movebg 60s  infinite;
+  animation: movebg 60s linear infinite;
+}
+
+.gridler {
+  position:absolute;
+  width: 100%;
+  min-height: 100%;
+  background-image: linear-gradient(#173255 .07em, transparent .07em), linear-gradient(90deg, #173255 .07em, transparent .07em);
+  background-size: 5em 5em;
+  opacity: .25;
+  z-index: -1;
+  -moz-animation: movebg 90s infinite ;
+  -webkit-animation: movebg 90s  infinite;
+  -o-animation: movebg 90s  infinite;
+  -ms-animation: movebg 90s  infinite;
+  animation: movebg 90s linear infinite;
+}
+
+@keyframes movebg {
+  from {background-position: 0% 0%;}
+  to {background-position: 100% 100%;}
 }
 
 #background {
   top: 0;
   z-index: -99999;
   pointer-events: none;
-  background-image: radial-gradient(#004E7E, #00234E)
 }
 
 #background::after {
   content: "";
   display: block;
-  z-index: -99999;
-  background-color: rgba(53, 58, 78, 0.38)
+  z-index: 0;
 }
 
 #background, #background::after, .pbg {
@@ -35,22 +78,6 @@ body {
   }
 }
 
-.pbg[data-value="-1"] {
-  animation-duration: 5s;
-}
-
-.pbg[data-value="-2"] {
-  animation-duration: 4s;
-}
-
-.pbg[data-value="-3"] {
-  animation-duration: 3s;
-}
-
-.pbg[data-value="-4"] {
-  animation-duration: 2s;
-}
-
 .pbg {
   width: 300%;
   height: 100vh;
@@ -65,6 +92,13 @@ body {
   transition-timing-function: cubic-bezier(0, 0.55, 0.45, 1);
 }
 
+
+/* .burg[data-value="-0.5"] {
+  width: 200%;
+  height: 100vh;
+  position: relative;
+  z-index: -99999;
+}
 .pbg[data-value="-1"] {
   animation-duration: 5s;
 }
@@ -79,7 +113,7 @@ body {
 
 .pbg[data-value="-4"] {
   animation-duration: 2s;
-}
+} */
 
 body :not(#audio) {
   user-select: none;
@@ -89,7 +123,8 @@ body :not(#audio) {
   position: absolute;
   top: 0;
   right: 0;
-  margin: 3em;
+  margin: 0.5em;
+  outline:none;
 }
 
 .hiddenGem{
@@ -119,28 +154,38 @@ body :not(#audio) {
   opacity: 1;
 }
 
+#hide:focus ~ .mainPanel {
+  opacity: 0;
+  pointer-events: none;
+}
+
 #hide:focus ~ .panel {
   opacity: 0;
   pointer-events: none;
 }
 
-#hide, .hiddenGem {
+#hide, .hiddenGem, .mainPanel, .panel {
   transition: opacity 150ms ease-in-out;
 }
 
-#hide, .panel {
-  transition: opacity 150ms ease-in-out;
+.mainPanel{
+  position: relative;
+  box-sizing: border-box;
+  max-width: 80%;
+  max-height: 80vh;
+  margin: auto;
+  align-items: center;
+  justify-content: center;
 }
 
 .panel {
   position: relative;
-  border-style: solid;
-  border-width: 1em;
   border-color: transparent;
-  border-radius: 1.5em;
   box-sizing: border-box;
   background-clip: padding-box;
-  background-color: rgba(31, 28, 29, 0.75);
+  float: left;
+  align-items: center;
+  justify-content: center;
 }
 
 .panel::before {
@@ -150,37 +195,49 @@ body :not(#audio) {
   left: 0;
   right: 0;
   bottom: 0;
-  border-radius: inherit;
-  padding: 1em;
-  margin: -1em;
-  background-image: linear-gradient(0deg, rgb(0, 79, 127), rgb(3, 208, 127));
   background-origin: border-box;
-  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-  -webkit-mask-composite: destination-out;
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: destination-out;
   mask-composite: exclude;
   pointer-events: none;
+}
+
+p {
+  font-size: 1.5em;
+  font-weight: bold;
+  font-family: "Silkscreen";
+  color:white;
 }
 
 /* spacing between each panel */
 
 .panel:not(:last-child) {
-  margin-bottom: 3em;
+  margin-right: 6%;
 }
 
 #info {
-  width: 60%;
-  max-width: 55em;
+  width: 45%;
+  margin-left: 2%;
 }
 
 #info img {
-  max-width: 100%;
+  max-width: 25%;
   max-height: 100%;
+  border-radius: 100%;
+  vertical-align: middle;
+  transition: scale 450ms ease-in-out, transform 450ms;
+}
+
+#info img:hover {
+  scale: 1.1;
+  transform: rotate(360deg);
 }
 
 .boomboxButton{
   display: block;
   margin: auto;
   padding-bottom: 5px;
+  outline:none;
 }
 
 .volumeSlider{
@@ -207,10 +264,9 @@ body :not(#audio) {
 }
 
 .volumeSlider::-moz-range-thumb {
-  -webkit-appearance: none; 
   appearance: none;
-  width: 10px; 
-  height: 10px; 
+  height: 10px;
+  width: 10px;
   background:white;
   border-radius: 40%;
   box-shadow: -407px 0 0 400px white;
@@ -220,6 +276,13 @@ body :not(#audio) {
 #volume{
  display: block;
  margin: auto;
+}
+
+.boombox {
+    position: absolute;
+    bottom:0;
+    right:0;
+    margin: 0.5em;
 }
 
 .boomboxButton {
@@ -236,24 +299,82 @@ body :not(#audio) {
 
 #buttons {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: wrap; 
   justify-content: center;
   align-items: center;
+  width: 45%;
+  max-width: 55em;
 }
 
 #buttons a {
-  margin: 1em;
-  max-width: 14em;
-  border-radius: 50em;
+  position:relative;
+  width:80%;
+  height:8%;
+  flex-grow:1;
+  margin:2%;
+  border-radius: 1.5em;
+  position: relative;
+  text-align: center;
+  align-items: center;
+  overflow: hidden;
+  box-sizing:border-box;
+  border-style: solid;
+  border-width: 6px;
+  border-color: #141414;
+  background: #141414;
+  transition: scale 150ms ease-in-out;
+  line-height: 5em;
+  text-decoration: none;
+  filter: drop-shadow(0px 0px 6px black);
+  outline:none;
+  display: flex;
 }
 
 #buttons img {
   max-width: 100%;
-  border-radius: 50em;
+  height: 2.5em;
+  margin-left: 5%;
+  margin-right: auto;
+  vertical-align: middle;
+  image-rendering: optimizeSpeed;
+  image-rendering: -moz-crisp-edges; 
+  image-rendering: -o-crisp-edges; 
+  image-rendering: -webkit-optimize-contrast; 
+  image-rendering: pixelated; 
+  image-rendering: optimize-contrast; 
+  -ms-interpolation-mode: nearest-neighbor;
+  pointer-events: none; 
 }
 
-#buttons img:hover {
-  opacity: 0.65;
+a::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-origin: border-box;
+  border-radius: 1.3em;
+  border-width: 5px;
+  border-color: transparent;
+  border-style: solid;
+  background: linear-gradient(0deg,#141414, #141414) content-box, linear-gradient(0deg,#38CB7D, #173255) border-box;
+  z-index: -1;
+}
+
+#buttons b {
+  font-size: 1.5em;
+  text-align: right;
+  font-style: italic;
+  font-family: "Silkscreen";
+  margin-right: 5%;
+  color:white;
+  margin-left: auto;
+  pointer-events: none;
+}
+
+#buttons :hover {
+  scale: 1.1;
 }
 
 #audio {
@@ -268,25 +389,84 @@ body :not(#audio) {
 /* rules for phones, tablets, etc */
 
 @media screen and (max-width: 900px) {
+
   body {
-    margin: 1.5em;
+    overflow: hidden;
+  }
+
+  .gridley, .gridler {
+    min-height:120%;
+  }
+
+  #info img {
+    max-width: 20%;
+  }
+
+  #info {
+    margin-bottom: 0%;
   }
 
   #hide {
     position: static;
+    margin-top: 1em;
+    margin-left: 1em;
+    margin-right: 1em;
+    margin-bottom: 1em;
+  }
+
+  .boombox {
+    position: relative;
     margin-top: 0em;
     margin-left: 1em;
     margin-right: 1em;
     margin-bottom: 1em;
   }
 
+  #buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 55em;
+    margin: 0%;
+  }
+
   #buttons a {
-    margin: 1em;
-    max-width: 9em;
+    height:4.5em;
+  }
+
+  #buttons b {
+    font-size: 1.25em;
+    font-style: italic;
+  }
+  #buttons img {
+    height: 2em;
+  }
+
+  .mainPanel{
+    box-sizing: border-box;
+    max-width: 90%;
+    max-height: 100%;
+    margin: auto;
+    align-items: center;
+    justify-content: center;
+  }
+
+  p {
+    font-size: 1em;
+    font-weight: bold;
+    font-family: "Silkscreen";
+    color:white;
+  }
+
+  .panel{
+    margin-bottom: 4%;
   }
 
   #info {
     width: 100%;
+    margin-left: 0%;
   }
 
   #audio {

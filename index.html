@@ -14,75 +14,83 @@
   <!-- scripts and stylesheets -->
   <link rel="stylesheet" href="./style/index.css">
   <script src="./scripts/index.js"></script>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Silkscreen">
 
   <!-- tab title and icon -->
-  <title lang="en">What's a mixel?</title>
-  <link rel="icon" type="image/png" href="./images/favicon.png"/>
+  <title lang="en">Unsalted Butter</title>
+  <link rel="icon" type="image/png" href="./images/theheadsetburg.png"/>
 
   <!-- embed data -->
-  <meta property="og:title" content="wubba wubba" />
-  <meta name="twitter:title" content="wubba wubba" />
+  <meta property="og:title" content="One brick" />
+  <meta name="twitter:title" content="Two brick(s)" />
 
   <link rel="canonical" href="" />
   <meta property="og:url" content="" />
   <meta name="twitter:url" content="" />
 
   <meta name="description" content="" />
-  <meta property="og:description" content="wabbu wooby" />
-  <meta name="twitter:description" content="wabbu wooby" />
+  <meta property="og:description" content="One brick" />
+  <meta name="twitter:description" content="Two brick(s)" />
 
   <meta property="og:image" content="https://raw.githubusercontent.com/Schmego/schmego.github.io/main/images/favicon.png" />
   <meta name="twitter:image" content="https://raw.githubusercontent.com/Schmego/schmego.github.io/main/images/favicon.png" />
 
-  <meta name="theme-color" content="#FFFFFF" />
-  <meta name="msapplication-TileColor" content="#FFFFFF">
+  <meta name="theme-color" content="#173255" />
+  <meta name="msapplication-TileColor" content="#173255">
 </head>
 
 <body>
-  <div id="background">
+  <!-- <div id="background">
     <div style="background-image: url('images/wave4.png')" class="pbg" data-value="-1"></div>
     <div style="background-image: url('images/wave3.png')" class="pbg" data-value="-2"></div>
     <div style="background-image: url('images/wave2.png')" class="pbg" data-value="-3"></div>
     <div style="background-image: url('images/wave1.png')" class="pbg" data-value="-4"></div>
-  </div>
+    <div style="background-image: url('images/the burg.png')" class="burg" data-value="-0.5"></div>
+  </div> -->
 
-  <input id="hide" type="image" src="images/star.gif" />
+  
 
-  <div id="info" class="panel">
-    <img src="images/hrh.png" />
-  </div>
+  <input id="hide" type="image" src="images/whatsthis.png" />
 
   <div id="whyIsThisHere" class="hiddenGem">
-    <img src="images/fnaffoxyplush.png" />
+    <img src="images/smiddd.png" />
   </div>
 
-  <div id="buttons" class="panel">
-    <a href="https://www.youtube.com/channel/UC2xqN_f56NTW0t3Xu7FqhoA">
-      <img src="images/button1.png" />
-    </a>
-    <a href="https://www.youtube.com/channel/UCTpUY0ZhTlwGA5WnPrzuHDg">
-      <img src="images/button2.png" />
-    </a>
-    <a href="https://twitter.com/Cobalterra">
-      <img src="images/button3.png" />
-    </a>
-    <a href="https://twitter.com/CobalterraArt">
-      <img src="images/button4.png" />
-    </a>
-    <a href="https://www.twitch.tv/cobalterra">
-      <img src="images/button5.png" />
-    </a>
-    <a href="https://soundcloud.com/cobalterra">
-      <img src="images/button6.png" />
-    </a>
-  </div>
+  <div id="HoldDeez" class="mainPanel">
+    <div id="info" class="panel">
+      <img src="images/themask.png" />
+      <p>I exist here and there. The doors are over there. Zip zappity zoom. A spark for your compuu. More text here maybe? You like reading?</p>
+    </div>
 
-  <div id="audioBox" class="panel boombox">
+    <div id="buttons" class="panel">
+      <a href="https://www.youtube.com/channel/UC2xqN_f56NTW0t3Xu7FqhoA">
+        <img src="images/tinyyoutube.png" /><b>YouTube</b>
+      </a>
+      <a href="https://www.youtube.com/channel/UCTpUY0ZhTlwGA5WnPrzuHDg">
+        <img src="images/tinyyoutube.png" /><b>Youtube 2</b>
+      </a>
+      <a href="https://twitter.com/Cobalterra">
+        <img src="images/tinytwitter.png" /><b>Twitter</b>
+      </a>
+      <!--<a href="https://twitter.com/CobalterraArt">
+        <img src="images/button4.png" />
+      </a>
+      <a href="https://www.twitch.tv/cobalterra">
+        <img src="images/button5.png" />
+      </a>-->
+      <a href="https://soundcloud.com/cobalterra">
+        <img src="images/tinysoundcloud.png" /><b>SoundCloud</b>
+      </a>
+    </div>
+  </div>
+  <div id="audioBox" class="boombox">
     <button class="boomboxButton" onclick="tunes()"><img id="image" onclick="fancyBoombox()" src="images/boombox.png"></button>
     <input type="range" class="volumeSlider" id="volume" min="0" max="100" value="25">
     <audio name="tune" id="song1" loop volume=".25" src="playlist/TechDownfall.mp3" type=""audio/mp3"></audio>
     <audio name="tune" id="song2" loop volume=".25" src="playlist/quartz qavern.mp3" type=""audio/mp3"></audio>
   </div>
+  <div class="gridley"></div>
+  <div class="gridler"></div>
 </body>
 
 </html>
