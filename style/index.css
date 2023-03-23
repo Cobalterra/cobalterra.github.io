@@ -164,7 +164,12 @@ body :not(#audio) {
   pointer-events: none;
 }
 
-#hide, .hiddenGem, .mainPanel, .panel {
+#hide:focus ~ .boombox {
+  opacity: 0;
+  pointer-events: none;
+}
+
+#hide, .hiddenGem, .mainPanel, .panel, .boombox {
   transition: opacity 150ms ease-in-out;
 }
 
@@ -434,6 +439,7 @@ a::before {
 
   #buttons a {
     height:4.5em;
+    margin:1%;
   }
 
   #buttons b {
