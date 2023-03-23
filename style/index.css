@@ -395,10 +395,6 @@ a::before {
 
 @media screen and (max-width: 900px) {
 
-  body {
-    overflow: hidden;
-  }
-
   .gridley, .gridler {
     min-height:120%;
   }
