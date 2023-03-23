@@ -248,7 +248,7 @@ p {
 .volumeSlider{
   appearance: none;
   height: 10px;
-  width: 125px;
+  width: 100px;
   background:black;
   outline: none;
   overflow:hidden;
@@ -427,6 +427,17 @@ a::before {
     margin-bottom: 1em;
   }
 
+  .boomboxButton {
+    max-width: 80px;
+    max-height: 80px;
+  }
+
+  .boomboxButton img {
+    max-width: 80px;
+    max-height: 80px;
+  }
+  
+
   #buttons {
     display: flex;
     flex-wrap: wrap;
@@ -435,19 +446,20 @@ a::before {
     width: 100%;
     max-width: 55em;
     margin: 0%;
-  }
+  } 
 
   #buttons a {
-    height:4.5em;
+    height:4em;
     margin:1%;
   }
 
   #buttons b {
-    font-size: 1.25em;
+    font-size: 1em;
     font-style: italic;
   }
   #buttons img {
-    height: 2em;
+    height: 1.75em;
+    margin-left: 4%;
   }
 
   .mainPanel{
@@ -460,7 +472,7 @@ a::before {
   }
 
   p {
-    font-size: 1em;
+    font-size: 0.8em;
     font-weight: bold;
     font-family: "Silkscreen";
     color:white;
@@ -473,6 +485,10 @@ a::before {
   #info {
     width: 100%;
     margin-left: 0%;
+  }
+
+  .volumeSlider{
+    width: 80px;
   }
 
   #audio {
